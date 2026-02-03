@@ -1,0 +1,39 @@
+tar nədir?
+tar — tape archive sözlərinin qısaltmasıdır.
+Linux-da faylları bir arxiv faylında toplamaq və ya arxivdən çıxarmaq üçün istifadə olunur.
+Yəni, tar həm pack həm də unpack üçün işləyir.
+________________________________________
+🔹 1. Arxiv yaratmaq (pack)
+tar -cvf archive.tar folder/
+Flag	İzah
+c	create (yaratmaq)
+v	verbose (proses göstərilsin)
+f	file (arxiv fayl adı)
+
+
+. Arxiv çıxarmaq (unpack)
+tar -xvf archive.tar
+Flag	İzah
+x	extract (çıxarmaq)
+v	verbose (göstər)
+f	file (arxiv fayl adı)
+
+3. tar.gz və tar.bz2 (compress + archive)
+•	.tar.gz — gzip ilə sıxılmış arxiv
+•	.tar.bz2 — bzip2 ilə sıxılmış arxiv
+yaratmaq
+tar -czvf archive.tar.gz folder/   # gzip
+tar -cjvf archive.tar.bz2 folder/  # bzip2
+🔹 Çıxarmaq
+tar -xzvf archive.tar.gz   # gzip
+tar -xjvf archive.tar.bz2  # b
+
+5. Qısa qayda
+Əməliyyat	Komanda
+Arxiv yarat	tar -cvf archive.tar folder/
+Sıxılmış arxiv	tar -czvf archive.tar.gz folder/
+Arxiv çıxarmaq	tar -xvf archive.tar
+Sıxılmış çıxarmaq	tar -xzvf archive.tar.gz
+Arxivə əlavə	tar -rvf archive.tar file.txt
+İçinə baxmaq	tar -tvf archive.tar
+
