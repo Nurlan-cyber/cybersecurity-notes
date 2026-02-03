@@ -1,0 +1,63 @@
+1️⃣ ~/.bashrc
+ls -l /home/nurlan/.bashrc
+🔹 Nədir?
+➡️ User-specific (yalnız nurlan üçün)
+➡️ Interactive NON-login shell zamanı oxunur
+🔹 Nə vaxt işləyir?
+•	Terminal açanda
+•	bash yazanda
+🔹 Nə üçün?
+•	alias
+•	PATH
+•	environment variable
+•	PS1 (prompt)
+________________________________________
+📌 2️⃣ ~/.bash_profile
+ls -l /home/nurlan/.bash_profile
+🔹 Nədir?
+➡️ User-specific
+➡️ Login shell zamanı oxunur
+🔹 Nə vaxt?
+•	Sistemə login olanda
+•	SSH ilə daxil olanda
+•	TTY login zamanı
+/etc/profile
+ls -l /etc/profile
+🔹 Nədir?
+➡️ System-wide (bütün userlər üçün)
+➡️ Login shell zamanı oxunur
+🔹 Nə üçün?
+•	Bütün userlər üçün PATH
+•	Default environment variable
+•	Umask
+________________________________________
+📌 4️⃣ /etc/bashrc
+ls -l /etc/bashrc
+🔹 Nədir?
+➡️ System-wide
+➡️ Interactive NON-login shell üçün
+🔹 Nə edir?
+•	Default alias-lar
+•	PS1
+•	System bash davranışı
+Hamısını bir cədvəldə
+Fayl	User / System	Login	 -   Non-login
+~/.bashrc	User	❌	    ✅
+~/.bash_profile	 User	✅	    ❌
+/etc/profile	System	✅	    ❌
+/etc/bashrc	System	❌	    ✅
+Ən əsas fayl: ~/.bashrc
+________________________________________
+~/.bash_profile
+•	SSH / login zamanı lazımdır
+•	Adətən sadəcə .bashrc-i çağırır
+________________________________________
+ Sistem səviyyəsində əsas
+/etc/profile
+•	Bütün userlər üçün
+•	Admin səviyyəsində vacibdir
+
+User üçün → .bashrc
+Login üçün → .bash_profile
+Sistem üçün → /etc/profile
+
