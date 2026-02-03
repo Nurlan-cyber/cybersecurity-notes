@@ -1,0 +1,61 @@
+STDOUT və STDERR nədir?
+Linux və Unix tipli əməliyyat sistemlərində hər bir prosesin üç əsas axını (stream) olur:
+1.	STDIN (Standard Input) – giriş
+2.	STDOUT (Standard Output) – normal çıxış
+3.	STDERR (Standard Error) – xəta çıxışı
+Bu axınlar proqramın istifadəçi və ya digər proqramlarla necə ünsiyyət qurduğunu müəyyən edir.
+________________________________________
+STDOUT (Standard Output)
+STDOUT proqramın normal və gözlənilən nəticələrini ötürdüyü çıxış kanalına deyilir.
+•	Komanda uğurla işlədikdə nəticə STDOUT-a yazılır
+•	Default olaraq terminal ekranına çıxır
+•	Xəta olmayan məlumatlar üçün istifadə olunur
+Məsələn:
+•	ls əmri qovluqdakı faylları göstərir
+•	echo "Hello" mətni ekrana çıxarır
+Bu nəticələr STDOUT vasitəsilə ötürülür.
+________________________________________
+STDERR (Standard Error)
+STDERR proqramın xəta, xəbərdarlıq və problem mesajlarını ötürdüyü ayrıca çıxış kanalına deyilir.
+•	Komanda uğursuz olduqda və ya problem yarandıqda istifadə olunur
+•	Default olaraq yenə terminala çıxır
+•	STDOUT-dan tamamilə müstəqildir
+Məsələn:
+•	Mövcud olmayan fayla müraciət
+•	İcazə (permission) xətası
+•	Yanlış parametr verilməsi
+Bu mesajlar STDERR üzərindən ötürülür.
+________________________________________
+Niyə STDOUT və STDERR ayrıdır?
+STDOUT və STDERR-in ayrı olmasının əsas səbəbləri:
+•	Normal nəticələrlə xəta mesajlarını ayırmaq
+•	Nəticələri fayla yazarkən xətaları ekranda saxlamaq
+•	Script və avtomatlaşdırmada xətələri ayrıca analiz etmək
+•	Loglama sistemlərində daha dəqiq nəzarət etmək
+Bu ayrılıq Linux-un güclü avtomatlaşdırma imkanlarının əsasını təşkil edir.
+ 
+
+
+File Descriptor nədir?
+File descriptor – əməliyyat sisteminin giriş-çıxış axınlarını tanımaq üçün istifadə etdiyi rəqəmsal identifikatordur.
+Hər proses avtomatik olaraq 3 əsas file descriptor ilə başlayır./
+1 və 2 nə deməkdir?
+1 → STDOUT (Standard Output)
+•	Proqramın normal nəticələri üçün istifadə olunur
+•	Default olaraq terminal ekranına çıxır
+•	Uğurlu əməliyyatların nəticəsi buradan gəlir
+2 → STDERR (Standard Error)
+•	Xəta və xəbərdarlıq mesajları üçün istifadə olunur
+•	Default olaraq terminal ekranına çıxır
+•	STDOUT-dan tam müstəqildir
+________________________________________
+Niyə 1 və 2 ayrı-ayrıdır?
+•	Normal nəticələri xətalardan ayırmaq üçün
+•	Script yazarkən xətələri ayrıca tutmaq üçün
+•	Log fayllarında təmiz nəticə saxlamaq üçün
+•	Avtomatlaşdırmada daha dəqiq nəzarət üçün
+Shell-də istifadəsi (nəzəri)
+•	1> → STDOUT yönləndirməsi
+•	2> → STDERR yönləndirməsi
+•	2>&1 → STDERR-i STDOUT-a birləşdirmək
+Bu əməliyyatları shell yerinə yetirir, proqram özü bilməz.
