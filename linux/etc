@@ -1,0 +1,47 @@
+/etc/passwd
+İstifadəçi əsas məlumat faylıdır
+•	User adları burada saxlanır
+•	Parol burada olmur
+•	Hamı oxuya bilər
+Format:
+username:x:UID:GID:comment:home:shell
+Vacib:
+•	x → parol /etc/shadow-dadır
+•	UID 0 → root
+________________________________________
+2️⃣ /etc/shadow
+İstifadəçi parollarının hash saxlandığı fayl
+•	Yalnız root oxuya bilər
+•	Brute-force analizində önəmlidir
+Format:
+username:hash:last:min:max:warn:inactive:expire
+Vacib:
+•	$6$ → SHA-512
+•	! və ya * → hesab bağlıdır
+________________________________________
+3️⃣ /etc/group
+Qruplar haqqında məlumat
+•	Qrup adı və üzvlər
+•	Hamı oxuya bilər
+Format:
+groupname:x:GID:user1,user2
+Vacib:
+•	wheel → sudo hüququ
+•	User bir neçə qrupa aid ola bilər
+________________________________________
+4️⃣ /etc/gshadow
+Qruplar üçün təhlükəsizlik faylı
+•	Qrup parolu və adminlər
+•	Yalnız root oxuya bilər
+Format:
+groupname:hash:admins:members
+Vacib:
+•	Qrup səviyyəsində privilege control
+•	İcazəsiz dəyişiklik risklidir
+________________________________________
+🧠 Yadda saxla (1 cümləlik)
+•	/etc/passwd → user info
+•	/etc/shadow → user password
+•	/etc/group → group info
+•	/etc/gshadow → group security
+
